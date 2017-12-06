@@ -50,11 +50,13 @@
 
         <Button
             android:id="@+id/btGolCasa"
-            style="@style/botao_gol" />
+            style="@style/botao_gol"
+            android:onClick="golCasa"/>
 
         <Button
             android:id="@+id/btGolVisitante"
-            style="@style/botao_gol" />
+            style="@style/botao_gol"
+            android:onClick="golVisitante"/>
 
     </LinearLayout>
 
