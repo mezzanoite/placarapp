@@ -19,6 +19,9 @@ public class GameActivity extends AppCompatActivity {
     private TextView tvPlacarTimeCasa;
     private TextView tvPlacarTimeVisitante;
 
+    private static final String GOL_CASA = "GOLCASA";
+    private static final String GOL_VISITANTE = "GOLVISITANTE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,17 +33,19 @@ public class GameActivity extends AppCompatActivity {
         tvPlacarTimeVisitante = (TextView) findViewById(R.id.tvPlacarTimeVisitante);
 
         if (getIntent() != null) {
-            timeCasa = getIntent().getStringExtra("TIMECASA");
-            timeVisitante = getIntent().getStringExtra("TIMEVISITANTE");
+            timeCasa = getIntent().getStringExtra(MainActivity.TIME_CASA);
+            timeVisitante = getIntent().getStringExtra(MainActivity.TIME_VISITANTE);
 
             tvTimeCasa.setText(timeCasa);
             tvTimeVisitante.setText(timeVisitante);
         }
 
         if (savedInstanceState != null) {
-            tvPlacarTimeCasa.setText(String.valueOf(savedInstanceState.getInt("GOLCASA")));
-            tvPlacarTimeVisitante.setText(String.valueOf(savedInstanceState.getInt("GOLVISITANTE")));
+            golCasa = savedInstanceState.getInt(GOL_CASA);
+            golVisitante = savedInstanceState.getInt(GOL_VISITANTE);
         }
+        tvPlacarTimeCasa.setText(String.valueOf(golCasa));
+        tvPlacarTimeVisitante.setText(String.valueOf(golVisitante));
     }
 
     @Override
@@ -61,7 +66,8 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("GOLCASA", golCasa);
-        outState.putInt("GOLVISITANTE", golVisitante);
+        outState.putInt(GOL_CASA, golCasa);
+        outState.putInt(GOL_VISITANTE, golVisitante);
     }
+
 }

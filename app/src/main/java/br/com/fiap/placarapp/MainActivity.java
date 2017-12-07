@@ -12,6 +12,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText etTimeCasa;
     private EditText etTimeVisitante;
 
+    public static final String TIME_CASA = "TIMECASA";
+    public static final String TIME_VISITANTE = "TIMECASA";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         Intent proximaTela = new Intent(this, GameActivity.class);
-        proximaTela.putExtra("TIMECASA", etTimeCasa.getText().toString());
-        proximaTela.putExtra("TIMEVISITANTE", etTimeVisitante.getText().toString());
+        proximaTela.putExtra(TIME_CASA, etTimeCasa.getText().toString());
+        proximaTela.putExtra(TIME_VISITANTE, etTimeVisitante.getText().toString());
         startActivity(proximaTela);
     }
 }
