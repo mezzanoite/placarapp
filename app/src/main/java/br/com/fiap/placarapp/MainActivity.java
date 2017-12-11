@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText etTimeVisitante;
 
     public static final String TIME_CASA = "TIMECASA";
-    public static final String TIME_VISITANTE = "TIMECASA";
+    public static final String TIME_VISITANTE = "TIMEVISITANTE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
